@@ -1,0 +1,34 @@
+.Main-wrapper{
+    min-height:100vh;
+}
+.Main-wrapper > main{
+    min-height:100vh;
+    background: #f3f6f8;
+}
+.Main-wrapper > .botton-wrapper{
+    position: fixed;
+    bottom:0;
+    display: flex;
+    min-height:50px;
+    min-width:100%;
+    background: #fff;
+    box-shadow: 0 -1px 5px rgba(10, 10, 10, 0.1);
+}
+.Main-wrapper > .botton-wrapper>.icon-wrapper{
+    flex: 1;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*flex-direction: column;*/
+}
+.Main-wrapper > .botton-wrapper>.icon-wrapper>.iconfont{
+    font-size: 20px;
+    color:#38d5c1;
+}
+.Main-wrapper > .botton-wrapper>.icon-wrapper>.border{
+    position: absolute;
+    bottom: 0;
+    min-width: 38px;
+    border: 1px solid #22d1b9;
+    box-shadow: 0 -1px 5px #87e2d4;
+}
