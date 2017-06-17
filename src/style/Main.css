@@ -3,6 +3,7 @@
 }
 .Main-wrapper > main{
     min-height:100vh;
+    padding:15px 8px 0px;
     background: #f3f6f8;
 }
 .Main-wrapper > .botton-wrapper{

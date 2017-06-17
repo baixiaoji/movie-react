@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Button from "./Button.js"
+import Film from "./Film.js"
 
 
 
@@ -9,8 +10,10 @@ class Main extends Component {
     render() {
         return (
             <div className="Main-wrapper">
-                <main>
-                    
+                <main className="film-grid">
+                    <Film />
+                    <Film />
+                    <Film />
                 </main>
                 <div className="botton-wrapper" >
                     <Button icon="iconfont icon-Movie" active={true} />                   
