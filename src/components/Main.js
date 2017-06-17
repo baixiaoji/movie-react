@@ -14,12 +14,12 @@ class Main extends Component {
                     <Film />
                     
                 </main>
-                <div className="botton-wrapper" >
+                {/*<div className="botton-wrapper" >
                     <Button icon="iconfont icon-Movie" active={true} />                   
                     <Button icon="iconfont icon-tickets" active={false} /> 
                     <Button icon="iconfont icon-search" active={false}/>                   
                     <Button icon="iconfont icon-user" active={false} />                   
-                </div>
+                </div>*/}
             </div>
 
         )
