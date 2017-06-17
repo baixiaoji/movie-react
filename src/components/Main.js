@@ -12,6 +12,7 @@ class Main extends Component {
             <div className="Main-wrapper">
                 <main className="film-grid">
                     <Film />
+                    
                 </main>
                 <div className="botton-wrapper" >
                     <Button icon="iconfont icon-Movie" active={true} />                   
