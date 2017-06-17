@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import Button from "./Button.js"
+// import Button from "./Button.js"
 import Film from "./Film.js"
 
 
@@ -12,7 +12,6 @@ class Main extends Component {
             <div className="Main-wrapper">
                 <main className="film-grid">
                     <Film />
-                    
                 </main>
                 {/*<div className="botton-wrapper" >
                     <Button icon="iconfont icon-Movie" active={true} />                   
