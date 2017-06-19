@@ -20,7 +20,7 @@ class App extends Component {
 // 映射 state -> props 
 function mapStateToProps(state){
     return {
-        film:state.film
+        film:state.film[0]
     }
 }
 
