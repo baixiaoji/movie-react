@@ -28,7 +28,7 @@ export function fetchFilm(){
                     if(err){
                         console.error(err.message)
                     }else{
-                        resolve( data.subjects )
+                      return   resolve( data.subjects )
                     }
                 })
         })
