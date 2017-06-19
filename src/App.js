@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from "./components/Header.js"
 import Main from "./components/Main.js"
 
+import {connect} from "react-redux"
+
 import "bulma/css/bulma.css"
 
 class App extends Component {
@@ -15,4 +17,11 @@ class App extends Component {
   }
 }
 
-export default App;
+// 映射 state -> props 
+function mapStateToProps(state){
+    return {
+        film:state.film
+    }
+}
+
+export default connect(mapStateToProps)(App);
