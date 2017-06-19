@@ -1,7 +1,9 @@
 import { applyMiddleware, createStore } from "redux"
 import { syncHistoryWithStore } from "react-router-redux"
 import { browserHistory } from "react-router"
+
 import logger from 'redux-logger'
+import thunk from "redux-thunk"
 
 import rootRudcer from "./reducers/index"
 
@@ -12,7 +14,7 @@ const defaultStore = {
     app: ["nih"]
 }
 
-const store = createStore(rootRudcer, applyMiddleware(logger));
+const store = createStore(rootRudcer, applyMiddleware(logger,thunk));
 
 export const history = syncHistoryWithStore(browserHistory, store)
 
