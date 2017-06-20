@@ -18,8 +18,6 @@ class Main extends Component {
         return (
             <div className="Main-wrapper">
                 <main className="film-grid">
-                    {/*<Film />*/}
-                    {/*{console.log( this.props.films[0])}*/}
                     {this.props.films.length > 0 ? AllFilmCom: "" }
                 </main>
                 {/*<div className="botton-wrapper" >
