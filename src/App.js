@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/Header.js"
 import Main from "./components/Main.js"
 
-import {connect} from "react-redux"
+// import {connect} from "react-redux"
 
 import "bulma/css/bulma.css"
 
@@ -18,10 +18,11 @@ class App extends Component {
 }
 
 // 映射 state -> props 
-function mapStateToProps(state){
-    return {
-        film:state.film[0]
-    }
-}
+// function mapStateToProps(state){
+//     return {
+//         film:state.film
+//     }
+// }
 
-export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps)(App);
+export default App;

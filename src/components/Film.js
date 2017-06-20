@@ -9,19 +9,21 @@ class Film extends Component {
     render() {
         return (
             <div className="film-wrapper">
-                <Link to="film/:id">
+                <Link to={`film/${this.props.film.id}`}>
                     <div className="film-img">
-                        <img src="https://img1.doubanio.com/view/movie_poster_cover/spst/public/p2459198108.webp" alt="" />
-                        <span className="rating image is-32x32">8.7</span>
+                        <img src={this.props.film.images.large} alt="" />
+                        <span className="rating image is-32x32">{this.props.film.rating.average}</span>
                     </div>
                 </Link>
 
                 <div className="film-info">
-                    <Link to="film/:id">
-                        <div className="info-title">The Mummy 新木乃伊</div>
+                    <Link to={`film/${this.props.film.id}`}>
+                        <div className="info-title">{this.props.film.title}</div>
                         <div className="info-genres">
+                            
                             <span className="genres-tag">
-                                动作
+                                {/*{this.props.genres}*/}
+                                奇幻
                             </span>
                             <span className="genres-tag">
                                 奇幻
