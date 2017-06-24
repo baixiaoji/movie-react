@@ -5,6 +5,7 @@ const ROOT_URL = `https://api.douban.com`;
 
 export const FETCH_FILM = "FETCH_FILM";
 
+
 export function fetchFilm() {
     const url = `${ROOT_URL}/v2/movie/in_theaters`
     // console.log(url)
@@ -40,5 +41,30 @@ export function fetchFilm() {
                payload: films
            })
        })
+    }
+}
+
+export const FETCH_SUMARY = "FETCH_SUMARY";
+
+export function fetchSummary(id){
+    const url = `${ROOT_URL}/v2/movie/subject/${id}`
+
+    let request = new Promise((resolve,reject)=> {
+        jsonp(url,null,function(err,data){
+            if (err) {
+                console.error(err.message)
+            } else {
+               resolve(data) 
+            }
+        })
+    })
+
+    return (dispatch) =>{
+        request.then(function(summary){
+            return dispatch({
+                type: FETCH_SUMARY,
+                summary: summary
+            })
+        })
     }
 }

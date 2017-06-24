@@ -11,7 +11,7 @@ import rootRudcer from "./reducers/index"
 
 const defaultStore = {
     film: [],
-    app: ["nih"]
+    summary: []
 }
 
 const store = createStore(rootRudcer, applyMiddleware(logger,thunk));
