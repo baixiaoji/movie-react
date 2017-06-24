@@ -15,7 +15,7 @@ class SingleFilm extends Component {
     render() {
         return (
             <div className="Main-wrapper">
-               
+               {this.props.summary}
             </div>
         )
     }
@@ -24,7 +24,7 @@ class SingleFilm extends Component {
 
 function mapStateToProps(state){
     return {
-        films:state.film
+        summary: state.summary
     }
 }
 

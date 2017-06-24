@@ -11,10 +11,10 @@ import rootRudcer from "./reducers/index"
 
 const defaultStore = {
     film: [],
-    summary: []
+    summary:[]
 }
 
-const store = createStore(rootRudcer, applyMiddleware(logger,thunk));
+const store = createStore(rootRudcer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger,thunk));
 
 export const history = syncHistoryWithStore(browserHistory, store)
 

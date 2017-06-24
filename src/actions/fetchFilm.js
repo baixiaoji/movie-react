@@ -38,13 +38,14 @@ export function fetchFilm() {
        request.then(function(films){
            return dispatch({
                type: FETCH_FILM,
-               payload: films
+               payload: films,
+               caption: "film"
            })
        })
     }
 }
 
-export const FETCH_SUMARY = "FETCH_SUMARY";
+export const FETCH_SUMMARY = "FETCH_SUMMARY";
 
 export function fetchSummary(id){
     const url = `${ROOT_URL}/v2/movie/subject/${id}`
@@ -54,7 +55,7 @@ export function fetchSummary(id){
             if (err) {
                 console.error(err.message)
             } else {
-               resolve(data) 
+               resolve(data.summary) 
             }
         })
     })
@@ -62,8 +63,9 @@ export function fetchSummary(id){
     return (dispatch) =>{
         request.then(function(summary){
             return dispatch({
-                type: FETCH_SUMARY,
-                summary: summary
+                type: FETCH_SUMMARY,
+                payload: summary,
+                caption: "summary"
             })
         })
     }

@@ -1,9 +1,16 @@
-import { FETCH_SUMARY } from "../actions/fetchFilm.js"
+import { FETCH_SUMMARY } from "../actions/fetchFilm.js"
 
 export default function (state = [], action) {
-    switch(action.type){
-        case FETCH_SUMARY:
-            return [...action.summary,...state];
+    const { caption } = action;
+    
+    
+    
+    switch (action.type) {
+        case FETCH_SUMMARY:
+            const newState = Object.assign({},state)
+            newState[caption] = action.payload
+            return newState
+            // return [...state,[caption]:action.payload];
         default:
             return state;
     }
