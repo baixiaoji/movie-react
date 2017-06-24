@@ -1,10 +1,12 @@
 import {combineReducers } from "redux"
 import  {routerReducer} from "react-router-redux"
 
-import WeatherReducer from "./reducer_film"
+import reducerAllFilm from "./reducer_film"
+import summary from "./reducer_summary"
 
 const rootRudcer = combineReducers({
-    film: WeatherReducer,
+    film: reducerAllFilm,
+    summary:summary,
     routing: routerReducer
 })
 

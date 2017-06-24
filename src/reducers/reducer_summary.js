@@ -7,10 +7,7 @@ export default function (state = [], action) {
     
     switch (action.type) {
         case FETCH_SUMMARY:
-            const newState = Object.assign({},state)
-            newState[caption] = action.payload
-            return newState
-            // return [...state,[caption]:action.payload];
+            return [...state,action.payload];
         default:
             return state;
     }
