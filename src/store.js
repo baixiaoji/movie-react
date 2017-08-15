@@ -14,7 +14,11 @@ const defaultStore = {
     summary:[]
 }
 
-const store = createStore(rootRudcer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger,thunk));
+const store = createStore(rootRudcer,
+                           compose( 
+                               applyMiddleware(logger,thunk),
+                               window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+                            )
 
 export const history = syncHistoryWithStore(browserHistory, store)
 
