@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from "redux"
+import { applyMiddleware, createStore ,compose} from "redux"
 import { syncHistoryWithStore } from "react-router-redux"
 import { browserHistory } from "react-router"
 
@@ -13,13 +13,24 @@ const defaultStore = {
     film: [],
     summary:[]
 }
-
-const store = createStore(rootRudcer,
-                           compose( 
-                               applyMiddleware(logger,thunk),
-                               window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-                            )
-                         )
+let store 
+if(!(window.__REDUX_DEVTOOLS_EXTENSION__ ||  window.__REDUX_DEVTOOLS_EXTENSION__)){
+    store = createStore(
+        rootRudcer,
+        applyMiddleware(logger,thunk)
+    )
+}else{
+    store = createStore(
+        rootRudcer,
+        compose(applyMiddleware(logger,thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    )
+}
+// const store = createStore(rootRudcer,
+//                         //    compose( 
+//                                applyMiddleware(logger,thunk),
+//                             //    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//                             // )
+//                          )
 
 export const history = syncHistoryWithStore(browserHistory, store)
 
